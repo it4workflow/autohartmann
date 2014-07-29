@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="de">
 <head>
 	<!-- Meta -->
 	<meta charset="utf-8" />
@@ -21,6 +21,8 @@
 	<!-- Mobile viewport optimized: h5bp.com/viewport -->
 	<meta name="viewport" content="width=device-width" />
 
+	<meta name="google-site-verification" content="Bm4Ct2rgK6Ye4tjveyHYi9mkasnwUGgMpzni63ryNbM" />
+	
 	<!-- Icons -->
 		<link rel="shortcut icon" href="images/icons/favicon.ico">
 		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/icons/apple-touch-icon-144-precomposed.png">
@@ -28,11 +30,14 @@
 		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/icons/apple-touch-icon-72-precomposed.png">
 		<link rel="apple-touch-icon-precomposed" href="images/icons/apple-touch-icon-57-precomposed.png">
 
+	<!-- Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+	
 	<!-- Shims: IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
 		<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-
+	
 	<!-- Styles -->
 	<%- @getBlock('styles').add(@site.styles).toHTML() %>
 </head>
@@ -46,7 +51,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/">Project name</a>
+				<a class="navbar-brand" href="/">Auto Hartmann</a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
@@ -75,9 +80,9 @@
 
 		<!-- Footer -->
 		<footer>
-			<p class="pull-left">&copy; Company <%- (new Date()).getFullYear() %></p>
+			<p class="pull-left">&copy; <%- (new Date()).getFullYear() %> - Auto Hartmann - Mermarken Werkstatt - bei Bamberg</p>
 			<p class="pull-right">
-				This website was last updated at <%= @site.date.toISOString() %>
+				Dies Webseite wurde <%= @site.date.toISOString() %> zuletzt aktualisiert.
 			</p>
 		</footer>
 	</div><!-- /container -->

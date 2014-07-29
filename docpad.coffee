@@ -1,4 +1,4 @@
-# The DocPad Configuration File
+﻿# The DocPad Configuration File
 # It is simply a CoffeeScript Object which is parsed by CSON
 docpadConfig = {
 
@@ -8,36 +8,32 @@ docpadConfig = {
 	# To access one of these within our templates, refer to the FAQ: https://github.com/bevry/docpad/wiki/FAQ
 
 	templateData:
-
 		# Specify some site properties
 		site:
 			# The production url of our website
-			url: "http://website.com"
+			url: "http://www.auto-hartmann.de"
 
 			# Here are some old site urls that you would like to redirect from
-			oldUrls: [
-				'www.website.com',
-				'website.herokuapp.com'
-			]
+			oldUrls: []
 
 			# The default title of our website
-			title: "Your Website"
+			title: "Auto Hartmann - Mermarken Werkstatt - bei Bamberg"
 
 			# The website description (for SEO)
 			description: """
-				When your website appears in search results in say Google, the text here will be shown underneath your website's title.
+				Auto Hartmann. Hier finden Sie Informationen über uns und unseren Servicedienstleistungen rund ums Auto...
 				"""
 
 			# The website keywords (for SEO) separated by commas
 			keywords: """
-				place, your, website, keywoards, here, keep, them, related, to, the, content, of, your, website
+				auto, hartmann, trunstadt, bamberg, kfz, werkstatt, reparatur, unfall, service
 				"""
 
 			# The website author's name
-			author: "Your Name"
+			author: "Harald Hartmann"
 
 			# The website author's email
-			email: "your@email.com"
+			email: "office@it4workflow.de"
 
 			# Styles
 			styles: [
@@ -85,10 +81,11 @@ docpadConfig = {
 	# These are special collections that our website makes available to us
 
 	collections:
+
 		pages: (database) ->
 			database.findAllLive({pageOrder: $exists: true}, [pageOrder:1,title:1])
 
-		posts: (database) ->
+		news: (database) ->
 			database.findAllLive({tags:$has:'post'}, [date:-1])
 
 
@@ -96,6 +93,7 @@ docpadConfig = {
 	# Plugins
 
 	plugins:
+	
 		downloader:
 			downloads: [
 				{
@@ -105,7 +103,15 @@ docpadConfig = {
 					tarExtractClean: true
 				}
 			]
-
+			
+		sitemap:
+			changefreq: 'monthly'
+			priority: 0.5
+			filePath: 'sitemap.xml'
+			collectionName: 'pages'
+			
+		cleanurls:
+			trailingSlashes: true
 
 	# =================================
 	# DocPad Events
